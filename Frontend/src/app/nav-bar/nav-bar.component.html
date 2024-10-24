@@ -1,0 +1,17 @@
+<nav class="fixed top-0 left-0 right-0 z-50 nav flex items-center bg-transparent p-2" [ngClass]="{'bg-blue-300': isScrolled, 'bg-transparent': !isScrolled}">
+    <div class="flex items-center justify-between lg:w-3/4">
+      <div class="text-white mx-4 p-2">
+        <span class="font-serif font-extrabold text-4xl">BonVoyage</span>
+      </div>
+      <div class="text-xl font-semibold font-sans flex justify-evenly ">
+        <a href="#" class="text-white hover:text-black mr-4">Explore Destinations</a>
+        <a href="#" class="text-white hover:text-black mr-4">Holiday Packages</a>
+        <a href="#" class="text-white hover:text-black">Exclusive</a>
+        <a routerLink="/aboutus" class="text-white hover:text-black ml-4">About Us</a>
+      </div>
+    </div>
+    <div class="lg:w-1/4 flex justify-end mr-4">
+        <button class="px-2 py-1 border-2 rounded-md text-white font-semibold hover:bg-blue-500" routerLink="/user">User</button>
+    </div>
+  </nav>
+  

@@ -1,0 +1,40 @@
+<div class="mt-12 mx-6">
+    <h2 class="pl-8 font-semibold text-2xl">Trending Destinations</h2>
+    <div class="items_list flex overflow-x-auto mt-4">
+        @for (item of trending_destinations; track item) {
+        <div class="card w-1/4 mx-4 relative parent-div">
+            <div class="img-container w-full h-full rounded-lg">
+                <a [routerLink]="['/packages', item.name]">
+                    <img [src]="item.image" alt="{{ item.title }}" class="w-full h-full rounded-lg" />
+                    <div class="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
+                    <div class="absolute inset-0 items-center justify-end mb-12 rounded-lg flex flex-col ">
+                        <p class="text-white text-center z-10 italic text-xl font-semibold">{{item.title}}</p>
+                        <p class="text-white text-center z-10 font-bold text-2xl font-serif">{{ item.name }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+ 
+<div class="bg-blue-200 p-4 mx-8 rounded-lg mt-8">
+    <p class="text-2xl font-semibold ml-4">VISA FREE DESTINATIONS</p>
+    
+    <div class="items_list flex overflow-x-auto mt-4 flex-wrap justify-evenly">
+        @for (item of visaFree_destinations; track item) {
+        <div class="w-1/4 mx-4 relative parent-div my-2 parent_div">
+            <div class="w-full h-full rounded-lg img-container">
+                <a [routerLink]="['/packages', item.name]">
+                    <img [src]="item.image" alt="{{ item.title }}" class="w-full h-full rounded-lg" />
+                    <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                    <div class="absolute inset-0 items-center justify-end mb-12 rounded-lg flex flex-col ">
+                        <p class="text-white text-center z-10 text-2xl font-bold">{{item.name}}</p>
+                        <p class="text-white text-center z-10 font-semibold text-lg">From ₹{{item.price}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        }
+    </div>
+</div>

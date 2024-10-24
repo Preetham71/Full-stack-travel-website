@@ -1,0 +1,54 @@
+<div class="mx-24">
+
+    <p class="text-3xl font-semibold font-sans my-4">{{packageData.packageName}}</p>
+    <div class="flex flex-col">
+
+        <div class="flex h-2/3 rounded-lg shadow-md mt-4">
+
+            <div class="w-1/2 rounded-lg">
+                <img src={{packageData.packageImage}} class="w-full rounded-xl" />
+            </div>
+            <div class="flex flex-col p-6 w-1/2">
+                <p class="text-xl font-sans">{{packageData.packageDesc}}</p>
+                <p class="mt-4 text-lg "><span class="font-semibold">Package Duration : </span> <span
+                        class="text-gray-700 font-sans font-semibold">{{packageData.packageDuration}}</span></p>
+                <p class="mt-2 text-lg "><span class="font-semibold">Min. Age : </span> <span
+                        class="text-gray-700 font-sans font-semibold">{{packageData.minAge}} years </span></p>
+                <p class="mt-2 text-lg"><span class="font-semibold">Date avl : </span> <span
+                        class="text-gray-700 font-sans font-semibold"> {{packageData.availableDate}}</span></p>
+                <hr class="border-gray-500 border-t-2 my-4">
+                <div class="flex justify-between">
+                    <div>
+                        <p class="font-bold text-xl">₹{{packageData.packagePrice}}</p>
+                        <p>per person</p>
+                    </div>
+                    <div>
+                        <button (click)="bookPackage()"
+                            class="px-4 py-2 bg-blue-500 hover:bg-blue-800 text-white font-bold rounded-md hover:rounded-lg hover:shadow-lg">
+                            Book Package
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-16 mt-10">
+            <div class="text-center">
+                <p class="mt-4 text-4xl font-semibold mx-auto ">package Itenaries:</p>
+            </div>
+            <ng-container *ngFor="let item of packageData.packageItenaryList; let i = index">
+                <div class="border border-gray-400 rounded-md my-8 flex"
+                    [ngClass]="{'flex-row': i % 2 === 0, 'flex-row-reverse': i % 2 !== 0}">
+                    <div class="w-1/2 p-4">
+                        <p class="text-2xl font-semibold font-sans">Day {{item.day}}</p>
+                        <p class="mt-2 text-xl font-semibold font-serif">{{item.title}}</p>
+                        <p class="text-lg mt-2">{{item.activities}}</p>
+                    </div>
+                    <div class="w-1/2 h-full">
+                        <img [src]="item.itenaryImage" class="rounded-lg h-full w-full" />
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

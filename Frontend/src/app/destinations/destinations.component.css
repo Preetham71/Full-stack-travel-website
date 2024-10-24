@@ -1,0 +1,24 @@
+.items_list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px;
+    width: calc(100% - 20px); /* Adjust the width to account for padding */
+}
+
+.card {
+    min-width: calc(25% - 8px); /* Adjust the min-width of the card */
+    max-height: 60vh;
+}
+
+.img-container {
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover {
+    transform: scale(1.1);
+}
+
+.parent-div{
+    overflow: hidden;
+}

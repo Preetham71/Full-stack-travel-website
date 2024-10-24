@@ -1,0 +1,15 @@
+.home {
+    background-image: url("https://media.nomadicmatt.com/2022/halongbaycheap.jpeg");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 120vh;
+  }
+  
+  
+  .input-transition {
+    transition: width 0.4s ease;
+  }
