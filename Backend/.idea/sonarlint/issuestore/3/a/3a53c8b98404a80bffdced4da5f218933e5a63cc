@@ -1,0 +1,6 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¹õü´8¢Æ÷ÿ1J$ae5dbdf2-fe8f-4f2e-b12b-c230d90686e6
+r	java:S106"+Replace this use of System.out by a logger.(öì“şÿÿÿÿ8«Æ÷ÿ1J$201d7048-18ff-46db-a075-c8eeaabeb4a9
+Œ
+java:S1612-"IReplace this lambda with method reference 'mapperLibrary::mapToUsersDto'.(æË®Õ8®Æ÷ÿ1J$efa27d63-e709-493b-8362-ab9807210f7e
+m	java:S106I"+Replace this use of System.out by a logger.(Ú¬§®8•ã£÷ÿ1J$b2564c39-0739-48c3-9447-07df1de3b5b4

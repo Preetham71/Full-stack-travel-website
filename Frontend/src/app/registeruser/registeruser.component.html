@@ -1,0 +1,72 @@
+<div class="flex justify-center items-center text-2xl font-bold font-serif mb-4">
+    <p>Register a New User</p>
+</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="align-middle mx-auto border-2 rounded-md p-8 bg-blue-200 w-1/2">
+    <div class="rounded-md shadow-sm -space-y-px">
+      <div>
+        <label for="userName" class="sr-only">User Name</label>
+        <input id="userName" formControlName="userName" type="text" autocomplete="name" required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="User Name">
+          <div *ngIf="registerForm.get('userName')?.touched && registerForm.get('userName')?.invalid" class="text-red-500">
+            <div *ngIf="registerForm.get('userName')?.errors?.['required']">User Name is required.</div>
+          </div>
+      </div>
+      <div>
+        <label for="userEmail" class="sr-only">Email address</label>
+        <input id="userEmail" formControlName="userEmail" type="email" autocomplete="email" required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Email address">
+          <div *ngIf="registerForm.get('userEmail')?.touched && registerForm.get('userEmail')?.invalid" class="text-red-500">
+            <div *ngIf="registerForm.get('userEmail')?.errors?.['required']">Email is required.</div>
+            <div *ngIf="registerForm.get('userEmail
+            ')?.errors?.['email']">Invalid email format.</div>
+          </div>
+      </div>
+      <div>
+        <label for="userPhone" class="sr-only">Phone Number</label>
+        <input id="userPhone" formControlName="userPhone" type="tel" autocomplete="tel" required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Phone Number">
+          <div *ngIf="registerForm.get('userPhone')?.touched && registerForm.get('userPhone')?.invalid" class="text-red-500">
+            <div *ngIf="registerForm.get('userPhone')?.errors?.['required']">Phone Number is required.</div>
+          </div>
+      </div>
+      <div>
+        <label for="userPassword" class="sr-only">Password</label>
+        <input id="userPassword" formControlName="userPassword" type="password" autocomplete="new-password" required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Password">
+          <div *ngIf="registerForm.get('userPassword')?.touched && registerForm.get('userPassword')?.invalid" class="text-red-500">
+            <div *ngIf="registerForm.get('userPassword')?.errors?.['required']">Password is required.</div>
+          </div>
+      </div>
+      <div>
+        <label for="userAddress" class="sr-only">Address</label>
+        <input id="userAddress" formControlName="userAddress" type="text" autocomplete="address" required
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          placeholder="Address">
+          <div *ngIf="registerForm.get('userAddress')?.touched && registerForm.get('userAddress')?.invalid" class="text-red-500">
+            <div *ngIf="registerForm.get('userAddress')?.errors?.['required']">Phone Number is required.</div>
+          </div>
+      </div>
+      <div>
+        <label for="userRole" class="sr-only">Role</label>
+        <select id="userRole" formControlName="userRole"
+          class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+          <option value="ADMIN">Admin</option>
+          <option value="USER" selected>User</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit" [disabled]="registerForm.invalid"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Sign up
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <p *ngIf="successMessage" class="bg-green-600 px-4 py-2 rounded-lg w-1/2 text-xl font-bold">{{successMessage}}</p>
+  

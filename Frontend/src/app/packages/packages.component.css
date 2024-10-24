@@ -1,0 +1,25 @@
+.img-container {
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover {
+    transform: scale(1.1);
+}
+
+.parent-div {
+    overflow: hidden;
+}
+.child {
+    align-self: flex-end;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure the parent div takes up the full height */
+}
+
+.nav{
+    background-color: aqua;
+}

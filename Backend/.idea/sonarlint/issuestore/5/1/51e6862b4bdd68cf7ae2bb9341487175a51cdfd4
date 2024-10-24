@@ -1,0 +1,8 @@
+
+€
+java:S1488&"cImmediately return this expression instead of assigning it to the temporary variable "packageDTOs".(ä†ƒÌ8¡÷®íÿ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È Øº8£÷®íÿ1
+—
+java:S6204("zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8«÷®íÿ1
+h
+java:S1612'"KReplace this lambda with method reference 'mapperLibrary::mapToPackageDTO'.(õäƒâ8¬÷®íÿ1

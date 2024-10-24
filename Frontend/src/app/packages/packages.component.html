@@ -1,0 +1,47 @@
+<div class="mx-24 mt-4">
+    <p class="text-3xl font-semibold font-serif">{{ country }} Packages</p>
+    @for (item of packageData; track item) {
+    <a [routerLink]="['/packages', item.name]">
+        <div class="my-6 flex rounded-lg shadow-md hover:shadow-xl h-80 ">
+
+            <div class="w-1/2 shadow-sm hover:shadow-lg parent-div ">
+                <img [src]="item.packageImage" alt="{{ item.title }}" class="w-full h-full rounded-lg img-container" />
+            </div>
+
+            <div class="p-5 w-1/2 parent">
+
+                <p class="font-semibold text-3xl">{{item.packageName}}</p>
+
+                <p class="">{{ item.packageDuration }}</p>
+                <div class="flex">
+                    <span><span class="font-semibold font-sans">ratings</span> : {{item.packageRating}} , <span
+                            class="text-gray-600 font-semibold">( {{item.packageReviews}} )</span> </span>
+
+                </div>
+
+                <div class="text-lg">
+                    <span>{{item.packageCity}}, {{item.packageCountry}}</span>
+                </div>
+
+                <hr class="border-gray-500 border-t-2 my-4">
+
+
+                <div class="flex justify-between">
+                    <div>
+                        <p class="font-bold text-xl">₹{{item.packagePrice}}</p>
+                        <p>per person</p>
+                    </div>
+                    <div>
+                        <a [routerLink]="['/packages', item.packageName, 'itenary', item.packageID]">
+                            <button class="px-4 py-2 bg-blue-500 hover:bg-blue-800 text-white font-bold rounded-md hover:rounded-lg hover:shadow-lg">
+                                ViewDetails
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </a>
+    }
+</div>
